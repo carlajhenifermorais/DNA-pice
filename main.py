@@ -1,5 +1,6 @@
 from random import randint, choice
-from especie import Golfinho
+from especie import *
+
 
 if __name__ == "__main__":
     print("Simulação de evolução de golfinhos \U0001F42C")
@@ -11,7 +12,7 @@ if __name__ == "__main__":
     for i in range(1, geracoes + 1):
         print(f"\n Geração {i}")
         for i in populacao:
-            print(f"{i.nome} ({i.sexo}) - Vel:{i.velocidade} Int:{i.inteligencia} Soc:{i.sociabilidade}")
+            print(f"{i.nome} ({i.sexo}) - Velocidade:{i.velocidade} Inteligência:{i.inteligencia} Sociabilidade:{i.sociabilidade}")
 
         maisapto = populacao[0]
         for golfinho in populacao:
@@ -30,7 +31,7 @@ if __name__ == "__main__":
                 novageracao.append(filho)
 
         if not novageracao:
-            novageracao = [criar_individuo() for i in range(tamanhopop)]
+            novageracao = [criarindividuo() for i in range(tamanhopop)]
 
         populacao = novageracao
 
